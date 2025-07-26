@@ -1,0 +1,660 @@
+[
+    {
+        "id": "6aca088ecdd6ec8e",
+        "type": "tab",
+        "label": "Sounds",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3549401bc987e792",
+        "type": "file in",
+        "z": "6aca088ecdd6ec8e",
+        "name": "sound",
+        "filename": "/home/STUDENT_17/fanfare_mono (1).wav",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "bd72f083aa6ebfb7",
+                "8854bf900c53afef"
+            ]
+        ]
+    },
+    {
+        "id": "8854bf900c53afef",
+        "type": "ui_audio",
+        "z": "6aca088ecdd6ec8e",
+        "name": "Audio",
+        "group": "f7e0e450c48c8915",
+        "voice": "Microsoft Emily Online (Natural) - English (Ireland)",
+        "always": false,
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "325c870858789335",
+        "type": "inject",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "check",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 60,
+        "wires": [
+            [
+                "ad588b6d60817b3a"
+            ]
+        ]
+    },
+    {
+        "id": "eb801599a2e74e7b",
+        "type": "ui_button",
+        "z": "6aca088ecdd6ec8e",
+        "name": "Play",
+        "group": "36dd6129e31d62f2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Play FanFare",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "blue",
+        "className": "",
+        "icon": "fa-play",
+        "payload": "Play",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "3549401bc987e792",
+                "b3ff112251947526",
+                "ad588b6d60817b3a",
+                "580f84d945c79576"
+            ]
+        ]
+    },
+    {
+        "id": "b3ff112251947526",
+        "type": "debug",
+        "z": "6aca088ecdd6ec8e",
+        "name": "debug 1038",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "bd72f083aa6ebfb7",
+        "type": "debug",
+        "z": "6aca088ecdd6ec8e",
+        "name": "debug 1039",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "aa77adf924da8aa2",
+        "type": "file in",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "filename": "/home/STUDENT_17/Bass-and-choir-free-background-music.wav",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 800,
+        "y": 500,
+        "wires": [
+            [
+                "934bf1919d290912",
+                "e21376328a06049b"
+            ]
+        ]
+    },
+    {
+        "id": "934bf1919d290912",
+        "type": "ui_audio",
+        "z": "6aca088ecdd6ec8e",
+        "name": "Music",
+        "group": "f7e0e450c48c8915",
+        "voice": "Microsoft Emily Online (Natural) - English (Ireland)",
+        "always": false,
+        "x": 1150,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b4c05658ac0fe458",
+        "type": "ui_button",
+        "z": "6aca088ecdd6ec8e",
+        "name": "Music",
+        "group": "36dd6129e31d62f2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Play Music",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "blue",
+        "className": "",
+        "icon": "fa-play",
+        "payload": "open",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 70,
+        "y": 460,
+        "wires": [
+            [
+                "25c4f46df27d7406",
+                "b9989c935129b82e",
+                "e1c9630e028ff1bf"
+            ]
+        ]
+    },
+    {
+        "id": "d3c71333e28c2360",
+        "type": "gate",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "controlTopic": "control",
+        "defaultState": "closed",
+        "openCmd": "open",
+        "closeCmd": "close",
+        "toggleCmd": "toggle",
+        "defaultCmd": "default",
+        "statusCmd": "status",
+        "persist": false,
+        "storeName": "memory",
+        "x": 450,
+        "y": 500,
+        "wires": [
+            [
+                "aa77adf924da8aa2"
+            ]
+        ]
+    },
+    {
+        "id": "25c4f46df27d7406",
+        "type": "ui_switch",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "label": "Music Gate",
+        "tooltip": "",
+        "group": "36dd6129e31d62f2",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "open",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "close",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "d3c71333e28c2360"
+            ]
+        ]
+    },
+    {
+        "id": "cea4b5f97de3416a",
+        "type": "change",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 560,
+        "wires": [
+            [
+                "934bf1919d290912",
+                "e21376328a06049b"
+            ]
+        ]
+    },
+    {
+        "id": "699a7ec4f03b4b1c",
+        "type": "ui_button",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "group": "36dd6129e31d62f2",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Stop Music",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "close",
+        "payloadType": "str",
+        "topic": "control",
+        "topicType": "str",
+        "x": 670,
+        "y": 560,
+        "wires": [
+            [
+                "cea4b5f97de3416a",
+                "25c4f46df27d7406",
+                "d3c71333e28c2360",
+                "7730820937189984"
+            ]
+        ]
+    },
+    {
+        "id": "b9989c935129b82e",
+        "type": "function",
+        "z": "6aca088ecdd6ec8e",
+        "name": "function 97",
+        "func": "// Check if the incoming payload is 'open'\nif (msg.payload === \"open\") {\n    // Create the first message with a topic 'control' and payload 'open'\n    var msg1 = { payload: \"open\", topic: \"control\" };\n\n    // Create the second message with only the topic information\n    var msg2 = { topic: msg.topic };\n\n    // Return both messages as separate outputs\n    return [[msg1, msg2]];\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 480,
+        "wires": [
+            [
+                "d3c71333e28c2360"
+            ]
+        ]
+    },
+    {
+        "id": "e21376328a06049b",
+        "type": "trigger",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "115",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 830,
+        "y": 380,
+        "wires": [
+            [
+                "d3c71333e28c2360"
+            ]
+        ]
+    },
+    {
+        "id": "ad588b6d60817b3a",
+        "type": "function",
+        "z": "6aca088ecdd6ec8e",
+        "name": "function 105",
+        "func": "// Initialize context variables if they don't exist\nif (typeof context.get('buttonClicked') === 'undefined') {\n    context.set('buttonClicked', false);\n}\n\n// Check if the message is from the UI button\nif (msg.payload === 'Play') {\n    context.set('buttonClicked', true);\n    return null; // Do nothing else if it's from the button\n}\n\n// Check if the message is from the inject node\nif (msg.topic === 'check') {\n    // Check if the button was clicked\n    if (context.get('buttonClicked')) {\n        context.set('buttonClicked', false); // Reset button state\n        msg.payload = { \"action\": \"Button was clicked!\" };\n        return msg; // Send the message to trigger the file read\n    } else {\n        return null; // Do nothing if the button was not clicked\n    }\n}\n\nreturn null; // Return nothing by default\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "3549401bc987e792"
+            ]
+        ]
+    },
+    {
+        "id": "e1c9630e028ff1bf",
+        "type": "function",
+        "z": "6aca088ecdd6ec8e",
+        "name": "function 106",
+        "func": "// Initialize context variables if they don't exist\nif (typeof context.get('buttonClicked') === 'undefined') {\n    context.set('buttonClicked', false);\n}\n\n// Check if the message is from the UI button\nif (msg.payload === 'open') {\n    context.set('buttonClicked', true);\n    return null; // Do nothing else if it's from the button\n}\n\n// Check if the message is from the inject node\nif (msg.topic === 'check') {\n    // Check if the button was clicked\n    if (context.get('buttonClicked')) {\n        context.set('buttonClicked', false); // Reset button state\n        msg.payload = { \"action\": \"Button was clicked!\" };\n        return msg; // Send the message to trigger the file read\n    } else {\n        return null; // Do nothing if the button was not clicked\n    }\n}\n\nreturn null; // Return nothing by default\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 420,
+        "wires": [
+            [
+                "b9989c935129b82e"
+            ]
+        ]
+    },
+    {
+        "id": "822a68967762d3ed",
+        "type": "inject",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "check",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "e1c9630e028ff1bf"
+            ]
+        ]
+    },
+    {
+        "id": "c88ad26cc8d1bbe3",
+        "type": "inject",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "check",
+        "payload": "",
+        "payloadType": "date",
+        "x": 570,
+        "y": 640,
+        "wires": [
+            [
+                "7730820937189984"
+            ]
+        ]
+    },
+    {
+        "id": "7730820937189984",
+        "type": "function",
+        "z": "6aca088ecdd6ec8e",
+        "name": "function 107",
+        "func": "// Initialize context variables if they don't exist\nif (typeof context.get('buttonClicked') === 'undefined') {\n    context.set('buttonClicked', false);\n}\n\n// Check if the message is from the UI button\nif (msg.payload === 'close') {\n    context.set('buttonClicked', true);\n    return null; // Do nothing else if it's from the button\n}\n\n// Check if the message is from the inject node\nif (msg.topic === 'check') {\n    // Check if the button was clicked\n    if (context.get('buttonClicked')) {\n        context.set('buttonClicked', false); // Reset button state\n        msg.payload = { \"action\": \"Button was clicked!\" };\n        return msg; // Send the message to trigger the file read\n    } else {\n        return null; // Do nothing if the button was not clicked\n    }\n}\n\nreturn null; // Return nothing by default\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 660,
+        "wires": [
+            [
+                "cea4b5f97de3416a"
+            ]
+        ]
+    },
+    {
+        "id": "1cac055e43555b6c",
+        "type": "mqtt out",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "65a2ca8346079a4e",
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ee3d655618ee5b08",
+        "type": "ui_button",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "group": "36dd6129e31d62f2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Disco off",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "E6633861A3433338",
+        "topicType": "str",
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "1cac055e43555b6c"
+            ]
+        ]
+    },
+    {
+        "id": "28038e0739d8f7b9",
+        "type": "inject",
+        "z": "6aca088ecdd6ec8e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "E6633861A3433338",
+        "payload": "ON",
+        "payloadType": "str",
+        "x": 520,
+        "y": 20,
+        "wires": [
+            [
+                "1cac055e43555b6c"
+            ]
+        ]
+    },
+    {
+        "id": "b8455b7ed81a5ae1",
+        "type": "debug",
+        "z": "6aca088ecdd6ec8e",
+        "name": "debug 1047",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "580f84d945c79576",
+        "type": "function",
+        "z": "6aca088ecdd6ec8e",
+        "name": "function 116",
+        "func": "// Set the output topic\nmsg.topic = \"E6633861A3433338\";\n\n// Set the payload to \"ON\"\nmsg.payload = \"ON\";\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 60,
+        "wires": [
+            [
+                "1cac055e43555b6c"
+            ]
+        ]
+    },
+    {
+        "id": "f7e0e450c48c8915",
+        "type": "ui_group",
+        "name": "Audio",
+        "tab": "9ee1523858e04373",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "36dd6129e31d62f2",
+        "type": "ui_group",
+        "name": "Sound",
+        "tab": "e09b6d2901d80d32",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "65a2ca8346079a4e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "ersc.ddns.net",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "9ee1523858e04373",
+        "type": "ui_tab",
+        "name": "Delivery Dashboard",
+        "icon": "mi-smart_display",
+        "order": 20,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e09b6d2901d80d32",
+        "type": "ui_tab",
+        "name": "ControlDashboard",
+        "icon": "mi-display_settings",
+        "order": 21,
+        "disabled": false,
+        "hidden": false
+    }
+]
