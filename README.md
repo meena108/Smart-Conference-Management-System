@@ -32,15 +32,17 @@ Since Node‑RED is already installed on your Rotown server, no local setup is n
 
 ## 🖼️ Verifying Uploaded Photos & Screenshots
 
-Your `docs/` folder and image files (e.g., `dashboard.png`, `agenda.png`, `flow-chart.png`) have already been uploaded via WinSCP. To display them in this README, ensure you include the following Markdown references:
+Your `docs/` folder and image files have already been uploaded via WinSCP. To display them in this README, include the following Markdown references for your two screenshots:
 
 ```markdown
-![Dashboard Screenshot](./docs/dashboard.png)
-![Agenda Display](./docs/agenda.png)
-![Node-RED Flow](./docs/flow-chart.png)
+![Control Dashboard](./docs/1.PNG)
+*The Node‑RED dashboard UI showing sound, video, and session controls.*
+
+![Node-RED Flow](./docs/1751742951818.jpg)
+*The core Node‑RED flow chart handling event timing and media triggers.*
 ```
 
-Once these lines are in place, your uploaded images will render automatically when viewed on GitHub or any Markdown previewer.
+Once these lines are in place, your images (`1.PNG` and `1751742951818.jpg`) will render automatically when viewed on GitHub or any Markdown previewer.
 
 ---
 
